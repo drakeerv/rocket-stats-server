@@ -6,8 +6,8 @@ import os
 SERVER_PATH = os.path.dirname(os.path.realpath(__file__))
 CLIENT_PATH = os.path.join(SERVER_PATH, "client/build")
 ERROR_PATH = os.path.join(SERVER_PATH, "error.html")
-HOST = "0.0.0.0"
-PORT = 8080
+HOST = os.environ.get("HOST", "0.0.0.0")
+PORT = os.environ.get("PORT", 80)
 
 app = flask.Flask(__name__)
 
