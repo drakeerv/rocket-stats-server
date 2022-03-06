@@ -29,11 +29,9 @@ def send_file(path):
         if os.path.isfile(index_path):
             path = index_path
 
-    print(path)
-
     if not os.path.exists(path):
         flask.abort(404)
-        
+
     return flask.send_file(path)
 
 @app.after_request
